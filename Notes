@@ -1,0 +1,8 @@
+Required environment variables
+  Path =  C:\Program Files\Alteryx\bin\Miniconda3\DLLs;C:\Program Files\Alteryx\bin\Miniconda3\Lib;C:\Program Files\Alteryx\bin\Miniconda3;C:\Program Files\Alteryx\bin\Miniconda3\Lib\site-packages;C:\Program Files\Alteryx\bin;C:\Program Files\Alteryx\bin\Plugins;C:\Program Files\Alteryx\bin\Miniconda3\Scripts;
+ 
+ Install Python Dependencies
+ 
+ PyART
+  conda install -c conda-forge arm_pyart
+  
