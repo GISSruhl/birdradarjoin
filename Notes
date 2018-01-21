@@ -3,6 +3,13 @@ Required environment variables
  
  Install Python Dependencies
  
+ Alteryx will not install new libraries without a new environment
+ 
+  First step is to create a new environments
+  PyArt and wradlib need seperate environments as they use different versions of several critical dependencies
+  
+    conda create --name wradlib python=3.6
+    conda create --name py_art python=3.6
  PyART
   conda install -c conda-forge arm_pyart
   
