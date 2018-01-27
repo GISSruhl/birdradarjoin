@@ -1,6 +1,6 @@
 <application>
   <component name="Git.Application.Settings">
-    <option name="myPathToGit" value="&quot;G:\Anaconda\envs\wradlib\Lib\site-packages\pip\vcs\__pycache__\git.cpython-36.pyc&quot;" />
+    <option name="myPathToGit" value="C:\Users\Ruhl\AppData\Local\GitHubDesktop\app-1.0.12\resources\app\git\cmd\git.exe" />
     <option name="SSH_EXECUTABLE" value="IDEA_SSH" />
   </component>
 </application>
