@@ -26,8 +26,8 @@ display = pyart.graph.RadarDisplay(radar)
 fig = plt.figure(figsize=(6,5))
 
 ax = fig.add_subplot(111)
-display.plot('reflectivity', 0, title = 'NEXRAD Reflectivity',
-             vmin=-10, vmax=10, colorbar_label='', ax=ax)
+display.plot('velocity', 0, title = 'NEXRAD Velocity',
+             vmin=-1, vmax=1, colorbar_label='', ax=ax)
 display.plot_range_ring(radar.range['data'][-1]/ 1200., ax=ax)
 display.set_limits(xlim=(-400,400), ylim=(-400, 400), ax=ax)
 plt.show()
