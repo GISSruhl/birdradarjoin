@@ -11,26 +11,36 @@ print("Lat/Long"
       "n", radar.latitude["data"], ",", radar.longitude["data"])
 print("Sweep Mode\n", radar.sweep_mode)
 print("Sweep Number\n", radar.sweep_number)
-print("Fixed Angle\n", radar.fixed_angle)
-print("NSweeps\n", radar.nsweeps)
+
+sweeplist = radar.sweep_number['data']
+for sweep in sweeplist:
+    sweepelevation = radar.get_elevation(sweep)
+    print('Sweep #: ', sweep, " Elevation: ", sweepelevation)
+print('Sweep List \n', sweeplist[-1])
+
+
+#for sweepnum in radar.sweep_number('data'):
+#    print(sweepnum)
+# print("Fixed Angle\n", radar.fixed_angle)
+# print("NSweeps\n", radar.nsweeps)
 print("Elevation \n", radar.get_elevation(1))
-print("Radar Fields \n",radar.fields)
+# print("Radar Fields \n",radar.fields)
 print("VCP Pattern \n", radar.metadata["vcp_pattern"])
 vcppatt = radar.metadata["vcp_pattern"]
 if vcppatt == 32 or vcppatt == 31:
       print("Select radar, it's good for finding birds.")
-radarplot = pyart.graph.RadarDisplay(radar)
-print("Radar Plot\n", radarplot.loc)
-print("\n\n\n\n")
-display = pyart.graph.RadarDisplay(radar)
-fig = plt.figure(figsize=(6,5))
-
-ax = fig.add_subplot(111)
-display.plot('reflectivity', 0, title = 'NEXRAD Reflectivity',
-             vmin=-10, vmax=10, colorbar_label='', ax=ax)
-display.plot_range_ring(radar.range['data'][-1]/ 1200., ax=ax)
-display.set_limits(xlim=(-400,400), ylim=(-400, 400), ax=ax)
-plt.show()
+# radarplot = pyart.graph.RadarDisplay(radar)
+# print("Radar Plot\n", radarplot.loc)
+# print("\n\n\n\n")
+# display = pyart.graph.RadarDisplay(radar)
+# fig = plt.figure(figsize=(6,5))
+#
+# ax = fig.add_subplot(111)
+# display.plot('velocity', 0, title = 'NEXRAD Velocity',
+#              vmin=-1, vmax=1, colorbar_label='', ax=ax)
+# display.plot_range_ring(radar.range['data'][-1]/ 1200., ax=ax)
+# display.set_limits(xlim=(-400,400), ylim=(-400, 400), ax=ax)
+# plt.show()
 #drawradar = pyart.core.antenna_to_cartesian(radar.range, radar.get_azimuth(1), radar.get_elevation)
 #print(drawradar)
 # Import NEXRAD files using PyArt.io.read to return radar object
